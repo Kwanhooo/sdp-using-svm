@@ -1,3 +1,4 @@
 arff~=0.9
 numpy~=1.21.5
 scikit-learn~=1.1.1
+pyyaml~=6.0
