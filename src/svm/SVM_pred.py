@@ -7,9 +7,9 @@ import arff
 def SVM_pred():
     # 从命令行读取文件
     module = input('请输入要预测的模块路径：')
-    metrics_res = "./data/Todo"
+    metrics_res = "./data/Todo/"
     file = metrics_res + "res.arff"
-    metrics = "./external/SMA.exe " + \
+    metrics = "D:\\Workspace-Java\\SoftwareMetricsAnalyse\\out\\artifacts\\SoftwareMetricsAnalyse_jar\\S.exe " + \
               module + " " + metrics_res
     res = os.system(metrics)
     print(res)
@@ -30,3 +30,6 @@ def SVM_pred():
         print('模块 ' + r.__str__() + '：\n', x)
         res = clf.predict([x])[0]
         print('预测结果：', res)
+        print('\n================================================================================\n\n')
+
+
