@@ -45,6 +45,8 @@ class Evaluator:
     def f_measure(self):
         r = self.recall()
         p = self.precision()
+        if r + p == 0:
+            return 0
         return 2 * r * p / (r + p)
 
     def reset(self):

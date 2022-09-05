@@ -1,3 +1,4 @@
-data_path: ./data/MDP/D''/
-train_percent: 0.02
+data_path: ./data/Target/
+train_percent: 1.0
 verbose: True
+skip_validation: True
