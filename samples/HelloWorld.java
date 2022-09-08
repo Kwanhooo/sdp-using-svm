@@ -13,7 +13,7 @@ public class HelloWorld {
 
 //返回了一个json格式的字符串。。
 
-        String result = configService.add(request);
+        Staaring result = configService.add(request);
 
         response.getOutputStream().write(result.getBytes());
 

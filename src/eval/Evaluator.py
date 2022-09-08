@@ -17,29 +17,37 @@ class Evaluator:
         print('F-MEASURE:', self.f_measure())
 
     def confuse_matrix(self, pre, act):
-        if pre == 'Y' and act == 'Y':
+        if pre == 1 and act == 1:
             self.tp += 1
             return 'TP'
-        elif pre == 'Y' and act == 'N':
+        elif pre == 1 and act == 0:
             self.fp += 1
             return 'FP'
-        elif pre == 'N' and act == 'Y':
+        elif pre == 0 and act == 1:
             self.fn += 1
             return 'FN'
-        elif pre == 'N' and act == 'N':
+        elif pre == 0 and act == 0:
             self.tn += 1
             return 'TN'
 
     def tpr(self):
+        if self.tp + self.fn == 0:
+            return 0
         return self.tp / (self.tp + self.fn)
 
     def recall(self):
+        if self.tp + self.fn == 0:
+            return 0
         return self.tp / (self.tp + self.fn)
 
     def fpr(self):
+        if self.fp + self.tn == 0:
+            return 0
         return self.fp / (self.fp + self.tn)
 
     def precision(self):
+        if self.tp + self.fp == 0:
+            return 0
         return self.tp / (self.tp + self.fp)
 
     def f_measure(self):
